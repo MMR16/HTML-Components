@@ -3,15 +3,15 @@ class Tooltip extends HTMLElement {
         super();
         this._tooltipContainer;
         // console.log(" First Component Works Well");
-
         ///////////Shadow Dom \\\\\\\\\ to add style that doesn't affected by any css file or any style
-        this.attachShadow({ mode: 'open' })
+        this.attachShadow({ mode: 'open' });
+        const template = document.getElementById('tooltip-template');
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
     }
 
     //connectedCallback method used to Work With DOM When This method called 
     connectedCallback() {
-        const tooltipIcon = document.createElement('span');
-        tooltipIcon.textContent = '(?)'
+        const tooltipIcon = this.shadowRoot.querySelector('span');
         tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this))
         tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this))
 
