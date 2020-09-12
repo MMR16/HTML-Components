@@ -5,8 +5,10 @@ class Tooltip extends HTMLElement {
         // console.log(" First Component Works Well");
         ///////////Shadow Dom \\\\\\\\\ to add style that doesn't affected by any css file or any style
         this.attachShadow({ mode: 'open' });
-        const template = document.getElementById('tooltip-template');
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.innerHTML = `
+                                     <slot>some default </slot>
+                                     <!-- any thing between slot will useed as default if not overwrite it -->
+                                     <span>(?)</span>`;
     }
 
     //connectedCallback method used to Work With DOM When This method called 
