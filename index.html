@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <slot>some default </slot>
-    <!-- any thing between slot will useed as default if not overwrite it -->
     <template id="tooltip-template">
+        <slot>some default </slot>
+        <!-- any thing between slot will useed as default if not overwrite it -->
         <span>(?)</span>
     </template>
     <p>
