@@ -9,13 +9,17 @@
 </head>
 
 <body>
+    <slot>some default </slot>
+    <!-- any thing between slot will useed as default if not overwrite it -->
     <template id="tooltip-template">
         <span>(?)</span>
     </template>
     <p>
         <mmr-tooltip>Web Component </mmr-tooltip> Are Awsome!
     </p>
-
+    <p>
+        <mmr-tooltip></mmr-tooltip>
+    </p>
 
 </body>
 
